@@ -1,6 +1,5 @@
-# PEM Fuel Cell Stack + DC–DC Converter (Fuzzy Logic Voltage Control)
 
-This project simulates a PEM fuel cell stack that generates a variable DC voltage and uses a DC–DC converter with a fuzzy logic controller to regulate the converter output voltage to a reference value (default: **22 V**).
+This project simulates a PEM fuel cell stack that generates a variable DC voltage and uses a DC–DC converter with a fuzzy logic controller to regulate the converter output voltage to a reference value.
 
 ---
 
@@ -8,7 +7,7 @@ This project simulates a PEM fuel cell stack that generates a variable DC voltag
 - PEM fuel cell **stack voltage** simulation under a varying current density profile
 - DC–DC converter driven by the PEM stack voltage as **Vin(t)**
 - Fuzzy logic controller that adjusts converter **duty cycle (D)** to regulate **Vout**
-- Scripts to run simulations and visualize fuzzy membership functions + control surface
+- Scripts to run simulations and visualize fuzzy membership functions and control surface
 
 ---
 
@@ -24,24 +23,24 @@ V_{\text{stack}}(t)=N_{\text{cells}}\,V_{\text{cell}}(i(t))
 $$
 
 ### Typical loss terms
-Ohmic loss:
+**Ohmic loss:**
 $$
 \eta_{\text{ohm}}(i)=i\,R_{\text{ohm}}
 $$
 
-Activation loss :
+**Activation loss:**
 $$
 \eta_{\text{act}}(i)=\frac{RT}{\alpha F}\ln\!\left(\frac{i}{i_0}\right)
 $$
 
-Concentration loss :
+**Concentration loss:**
 $$
 \eta_{\text{conc}}(i)=-\frac{RT}{nF}\ln\!\left(1-\frac{i}{i_{\text{lim}}}\right)
 $$
 
-### (Optional) Nernst open-circuit voltage
+### Nernst open-circuit voltage
 $$
-E_{\text{OCV}}=E_0+\frac{RT}{2F}\ln\!\left(\frac{p_{\mathrm{H_2}}\;p_{\mathrm{O_2}}^{1/2}}{p_{\mathrm{H_2O}}}\right)
+E_{\text{OCV}}=E_0+\frac{RT}{2F}\ln\!\left(\frac{p_{H_2}\,p_{O_2}^{1/2}}{p_{H_2O}}\right)
 $$
 
 ### Stack power
@@ -53,24 +52,26 @@ $$
 
 ## DC–DC converter relations 
 
-- **Boost:**
+
+**Boost converter (ideal):**
 $$
 V_{\text{out}}\approx \frac{V_{\text{in}}}{1-D}
 $$
 
+Where \(D \in [0,1]\) is the PWM duty cycle.
 
 ---
 
 ## Fuzzy controller signals 
-Voltage error and change-in-error:
+
+**Voltage error and change-in-error:**
 
 $$
-e(k)=V_{\text{ref}}-V_{\text{out}}(k),
-\qquad
-\Delta e(k)=e(k)-e(k-1)
+e(k)=V_{\text{ref}}-V_{\text{out}}(k), \qquad \Delta e(k)=e(k)-e(k-1)
 $$
 
-The fuzzy controller outputs the duty cycle command \(D \in [0,1]\).
+Fuzzy controller output:
+- \(D(k)\): duty cycle command used by the PWM/gate driver
 
 ---
 
