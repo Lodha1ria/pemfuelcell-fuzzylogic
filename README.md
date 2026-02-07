@@ -24,9 +24,9 @@ $$
 
 ### Typical loss terms
 **Ohmic loss:**
-$$
+$
 \eta_{\text{ohm}}(i)=i\,R_{\text{ohm}}
-$$
+$
 
 **Activation loss:**
 $$
