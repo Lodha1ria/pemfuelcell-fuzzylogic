@@ -23,12 +23,16 @@ V_{\text{stack}}(t)=N_{\text{cells}}\,V_{\text{cell}}(i(t))
 $$
 
 ### Typical loss terms
+
 **Ohmic loss:**
-$
-\eta_{\text{ohm}}(i)=i\,R_{\text{ohm}}
-$
+
+$$
+\eta_{ohm}(i) = i\,R_{ohm}
+$$
+
 
 **Activation loss:**
+
 $$
 \eta_{\text{act}}(i)=\frac{RT}{\alpha F}\ln\!\left(\frac{i}{i_0}\right)
 $$
@@ -53,7 +57,8 @@ $$
 ## DC–DC converter relations 
 
 
-**Boost converter (ideal):**
+**Boost converter:**
+
 $$
 V_{\text{out}}\approx \frac{V_{\text{in}}}{1-D}
 $$
