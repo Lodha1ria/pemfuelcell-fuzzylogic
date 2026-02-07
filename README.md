@@ -138,7 +138,7 @@ run("scripts/plot_fis.m")
 
 ---
 
-```md
+
 ![Fuzzy logic](docs/fuzzylogic.png)
 ![Pem cell](docs/pemcellimage.png)
 ![DC-DC controller](docs/DC_controller.png)
