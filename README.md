@@ -38,6 +38,7 @@ $$
 $$
 
 **Concentration loss:**
+
 $$
 \eta_{\text{conc}}(i)=-\frac{RT}{nF}\ln\!\left(1-\frac{i}{i_{\text{lim}}}\right)
 $$
